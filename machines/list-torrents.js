@@ -54,13 +54,28 @@ module.exports = {
       var torrents = data.torrents;
       torrents = torrents.map(function(info) {
         return {
-          hash: info[0],
-          name: info[2],
-          percentDone: info[4] / 1000,
-          eta: info[10],
-          torrentUrl: info[19],
-          status: info[21],
-          downloadDir: info[26],
+          parsed: {
+            hash: info[0],
+            name: info[2],
+            size: info[3],
+            percentProgressMils: info[4],
+            downloadedBytes: info[5],
+            uploadedBytes: info[6],
+            ratioMils: info[7],
+            uploadspeedBytesSec: info[8],
+            downloadspeedBytesSec: info[9],
+            etaSec: info[10],
+            peersConnected: info[12],
+            peersSwarm: info[13],
+            seedsConnected: info[14],
+            seedsSwarm: info[15],
+            availabilty: info[16]/65536,
+            queueOrder: info[17],
+            remainingBytes: info[18],            
+            torrentUrl: info[19],
+            status: info[21],
+            downloadDir: info[26]
+          },
           raw: info
         };
       });
