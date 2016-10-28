@@ -69,9 +69,9 @@ module.exports = {
             peersSwarm: info[13],
             seedsConnected: info[14],
             seedsSwarm: info[15],
-            availabilty: info[16]/65536,
+            availability: info[16]/65536,
             queueOrder: info[17],
-            remainingBytes: info[18],            
+            remainingBytes: info[18],
             torrentUrl: info[19],
             status: info[21],
             downloadDir: info[26]
