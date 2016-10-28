@@ -49,7 +49,7 @@ module.exports = {
     // console.log(client, typeof client.call, client.call);
     client.call("list", function(err, data) {
       if (err) {
-        return exists.error(err);
+        return exits.error(err);
       }
       var torrents = data.torrents;
       torrents = torrents.map(function(info) {
@@ -60,7 +60,8 @@ module.exports = {
           eta: info[10],
           torrentUrl: info[19],
           status: info[21],
-          downloadDir: info[26]
+          downloadDir: info[26],
+          raw: info
         };
       });
       return exits.success(torrents);

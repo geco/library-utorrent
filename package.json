@@ -1,23 +1,19 @@
 {
-  "name": "machinepack-utorrent",
-  "version": "0.1.2",
+  "name": "library-utorrent",
+  "version": "0.1.3",
   "description": "Communicate with uTorrent client API to list and add torrents.",
   "scripts": {
     "test": "node ./node_modules/test-machinepack-mocha/bin/testmachinepack-mocha.js"
   },
   "keywords": [
     "uTorrent",
-    "machines",
-    "machinepack"
+    "torrent",
+    "library"
   ],
-  "author": {
-    "name": "Glavin Wiechert",
-    "email": "glavin.wiechert@gmail.com",
-    "url": "https://github.com/Glavin001"
-  },
+  "author": "geco (https://github.com/geco)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Glavin001/machinepack-utorrent.git"
+    "url": "git+https://github.com/geco/library-utorrent.git"
   },
   "license": "MIT",
   "dependencies": {
@@ -40,5 +36,10 @@
       "stop-torrent",
       "remove-torrent"
     ]
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/geco/library-utorrent/issues"
+  },
+  "homepage": "https://github.com/geco/library-utorrent#readme",
+  "main": "index.js"
 }
