@@ -1,9 +1,9 @@
 {
   "name": "library-utorrent",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Communicate with uTorrent client API to list and add torrents.",
   "scripts": {
-    "test": "node ./node_modules/test-machinepack-mocha/bin/testmachinepack-mocha.js"
+    "test": "echo \"No test yet specified\" && exit 1"
   },
   "keywords": [
     "uTorrent",
@@ -30,6 +30,7 @@
       "add-torrent",
       "list-torrents",
       "get-torrent-details",
+      "get-settings",
       "create-client",
       "add-torrent-url",
       "start-torrent",
