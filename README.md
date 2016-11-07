@@ -1,25 +1,154 @@
 
 # library-utorrent
-##### This is the new mantained version
-(Used by <a href="https://github.com/geco/utorrent-console" title="Manage your uTorrent from console">https://github.com/geco/utorrent-console</a>)
 
-Communicate with uTorrent client API to list and add torrents.
+Communicate with uTorrent Web API to list and add torrents, wraps the uTorrent Web API: __<a href="http://help.utorrent.com/customer/portal/topics/664593/articles" title="uTorrent Web API"  target="_blank">http://help.utorrent.com/customer/portal/topics/664593/articles</a>__
 
 
 ## Installation
 
 ```sh
-$ npm install library-utorrent
+$ npm install library-utorrent --save
 ```
 
 ## Usage
 
-For the latest usage documentation, version information, and test status of this module, see <a href="http://node-machine.org/machinepack-utorrent" title="Communicate with uTorrent client API to list and add torrents. (for node.js)">http://node-machine.org/machinepack-utorrent</a>.  The generated manpages for each machine contain a complete reference of all expected inputs, possible exit states, and example return values.  If you need more help, or find a bug, jump into [Gitter](https://gitter.im/node-machine/general) or leave a message in the project [newsgroup](https://groups.google.com/forum/?hl=en#!forum/node-machine).
+Load the library:
+```javascript
+var UTorrent = require('library-utorrent');
+```
+
+#### Add a Torrent file:
+```javascript
+UTorrent.addTorrent({
+  host: 'localhost',
+  port: 26085,
+  username: 'admin',
+  password: '12345',
+  torrentContents: 'Torrent Contents',
+  downloadDir: 0,
+  path: '/dir/path/',
+}).exec({
+  // An unexpected error occurred.
+  error: function (err){
+
+  },
+  // OK.
+  success: function (){
+
+  }
+});
+```
+#### Add a Torrent url:
+```javascript
+UTorrent.addTorrentUrl({
+  host: 'localhost',
+  port: 26085,
+  username: 'admin',
+  password: '12345',
+  torrentUrl: '',
+  downloadDir: 0,
+  path: '/dir/path/',
+}).exec({
+  // An unexpected error occurred.
+  error: function (err){
+
+  },
+  // OK.
+  success: function (){
+
+  }
+});
+```
+#### List all Torrents and details:
+```javascript
+UTorrent.listTorrents({
+  host: 'localhost',
+  port: 26085,
+  username: 'admin',
+  password: '12345',
+}).exec({
+// An unexpected error occurred.
+  error: function (err){
+
+  },
+  // OK.
+  success: function (torrents){
+    /*
+    torrents is an array of objects:
+    [{
+      parsed: {
+        hash,
+        name,
+        size
+        percentProgressMils,
+        downloadedBytes,
+        uploadedBytes,
+        ratioMils,
+        uploadspeedBytesSec,
+        downloadspeedBytesSec,
+        etaSec,
+        peersConnected,
+        peersSwarm,
+        seedsConnected,
+        seedsSwarm,
+        availability,
+        queueOrder,
+        remainingBytes,
+        torrentUrl,
+        status,
+        downloadDir
+      },
+      raw
+    }, ...]
+    */
+  }
+});
+```
+#### Remove, start and stop torrent:
+```javascript
+UTorrent.removeTorrent({...credentials, hash: 'torrentHash'})
+UTorrent.startTorrent({...credentials, hash: 'torrentHash'})
+UTorrent.stopTorrent({...credentials, hash: 'torrentHash'})
+```
+#### Retrieve uTorrent settings:
+```javascript
+UTorrent.getsettings({
+  host: 'localhost',
+  port: 26085,
+  username: 'admin',
+  password: '12345'
+}).exec({
+  // An unexpected error occurred.
+  error: function (err){
+
+  },
+  // OK.
+  success: function (result){
+    /*
+    {
+      "build": BUILD NUMBER (integer),
+      "settings": [
+      [
+      OPTION NAME (string),
+      TYPE* (integer),
+      VALUE (string)	],
+      ...
+      ]
+    }
+    */
+  }
+});
+```
+- OPTION NAME is the name of the setting. They are not listed here, as some of the settings (particularly advanced ones) vary with each version and most are self-explanatory
+- TYPE is an integer value that indicates what type of data is enclosed within the VALUE string. The following is a list of the possible TYPEs and what VALUE type it corresponds to:
+  * 0 = Integer
+  * 1 = Boolean
+  * 2 = String
+
 
 ## About
-This is a [machinepack](http://node-machine.org/machinepacks), an NPM module which exposes a set of related Node.js [machines](http://node-machine.org/spec/machine) according to the [machinepack specification](http://node-machine.org/spec/machinepack).
-Documentation pages for the machines contained in this module (as well as all other NPM-hosted machines for Node.js) are automatically generated and kept up-to-date on the <a href="http://node-machine.org" title="Public machine registry for Node.js">public registry</a>.
-Learn more at <a href="http://node-machine.org/implementing/FAQ" title="Machine Project FAQ (for implementors)">http://node-machine.org/implementing/FAQ</a>.
+##### This is the new mantained version of the library.
+(Used by <a href="https://github.com/geco/utorrent-console" title="Manage your uTorrent from console">https://github.com/geco/utorrent-console</a>)
 
 ## License
 
