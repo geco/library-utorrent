@@ -1,6 +1,6 @@
 {
   "name": "library-utorrent",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Communicate with uTorrent client API to list and add torrents.",
   "scripts": {
     "test": "echo \"No test yet specified\" && exit 1"

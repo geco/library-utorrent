@@ -107,7 +107,7 @@ UTorrent.listTorrents({
 #### Remove, start and stop torrent:
 ```javascript
 UTorrent.removeTorrent({...credentials, hash: 'torrentHash'})
-UTorrent.startTorrent({...credentials, hash: 'torrentHash'})
+UTorrent.startTorrent({...credentials, hash: 'torrentHash'}) // start or forcestart (with param force=true)
 UTorrent.stopTorrent({...credentials, hash: 'torrentHash'})
 ```
 #### Retrieve uTorrent settings:

@@ -1,4 +1,4 @@
-module.exports = {
+  module.exports = {
 
   friendlyName: 'Get Settings',
 

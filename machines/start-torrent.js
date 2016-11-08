@@ -52,7 +52,9 @@ module.exports = {
     var options = {
       'hash': inputs.hash
     };
-    client.call('start', options, function (err, data) {
+    var action = 'start';
+    if (inputs.force) action = 'forcestart';
+    client.call(action, options, function (err, data) {
       if (err) {
         return exits.error(err);
       }
