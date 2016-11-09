@@ -26,11 +26,13 @@ module.exports = {
       required: true
     },
     torrentContents: {
-      example: 'Torrent Contents',
+      //example: 'Torrent Contents',
+      typeclass: '*',
       required: true
     },
     downloadDir: {
-      example: 0,
+      //example: 0,
+      typeclass: '*',
       required: false
     },
     path: {

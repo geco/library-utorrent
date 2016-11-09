@@ -24,7 +24,7 @@ UTorrent.addTorrent({
   port: 26085,
   username: 'admin',
   password: '12345',
-  torrentContents: 'Torrent Contents',
+  torrentContents: fileBufferWithTorrentContents,
   downloadDir: 0,
   path: '/dir/path/',
 }).exec({
