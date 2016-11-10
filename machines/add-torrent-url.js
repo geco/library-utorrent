@@ -26,7 +26,7 @@ module.exports = {
       required: true
     },
     torrentUrl: {
-      example: '',
+      typeclass: '*',
       required: true
     },
     downloadDir: {

@@ -45,7 +45,7 @@ UTorrent.addTorrentUrl({
   port: 26085,
   username: 'admin',
   password: '12345',
-  torrentUrl: '',
+  torrentUrl: urlOrMagnet,
   downloadDir: 0,
   path: '/dir/path/',
 }).exec({
@@ -106,7 +106,7 @@ UTorrent.listTorrents({
 ```
 #### Remove, start and stop torrent:
 ```javascript
-UTorrent.removeTorrent({...credentials, hash: 'torrentHash'})
+UTorrent.removeTorrent({...credentials, hash: 'torrentHash'}) // remove or removedata (with param removedata=true)
 UTorrent.startTorrent({...credentials, hash: 'torrentHash'}) // start or forcestart (with param force=true)
 UTorrent.stopTorrent({...credentials, hash: 'torrentHash'})
 ```
