@@ -28,6 +28,10 @@ module.exports = {
     hash: {
       example: '',
       required: true
+    },
+    removedata: {
+      example: false,
+      required: false
     }
   },
 
