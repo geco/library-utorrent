@@ -104,6 +104,40 @@ UTorrent.listTorrents({
   }
 });
 ```
+#### List Torrent Contents:
+```javascript
+UTorrent.getTorrentDetails({
+  host: 'localhost',
+  port: 26085,
+  username: 'admin',
+  password: '12345',
+  hash: 'torrentHash'
+}).exec({
+// An unexpected error occurred.
+  error: function (err){
+
+  },
+  // OK.
+  success: function (result){
+    /*
+    {
+      "build": BUILD NUMBER (integer),
+      "files": [
+      HASH (string),
+      [
+      [
+      FILE NAME (string),
+      FILE SIZE (integer in bytes),
+      DOWNLOADED (integer in bytes),
+      PRIORITY* (integer)	],
+      ...
+      ]
+      ]
+    }
+    */
+  }
+});
+```
 #### Remove, start and stop torrent:
 ```javascript
 UTorrent.removeTorrent({...credentials, hash: 'torrentHash'}) // remove or removedata (with param removedata=true)
