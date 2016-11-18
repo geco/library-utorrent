@@ -1,6 +1,6 @@
 {
   "name": "library-utorrent",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Communicate with uTorrent client API to list and add torrents.",
   "scripts": {
     "test": "echo \"No test yet specified\" && exit 1"
@@ -31,6 +31,7 @@
       "list-torrents",
       "get-torrent-details",
       "get-settings",
+      "set-settings",
       "create-client",
       "add-torrent-url",
       "start-torrent",

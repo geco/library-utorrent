@@ -179,6 +179,26 @@ UTorrent.getsettings({
   * 1 = Boolean
   * 2 = String
 
+#### Set uTorrent settings:
+```javascript
+UTorrent.setSettings({
+  host: 'localhost',
+  port: 26085,
+  username: 'admin',
+  password: '12345',
+  name: settingName,
+  value: settingValue
+}).exec({
+  // An unexpected error occurred.
+  error: function (err){
+
+  },
+  // OK.
+  success: function (){
+
+  }
+});
+```
 
 ## About
 ##### This is the new mantained version of the library.
